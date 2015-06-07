@@ -87,7 +87,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/frogsystem/fs2legacy.git",
-                "reference": "9853405d083871f9e671e853a1a3af4fbb572c7b"
+                "reference": "3a2228b5a524b72d23b938f6ab7d7d28d22b7f25"
             },
             "require": {
                 "frogsystem/metamorphosis": "dev-master"
@@ -111,7 +111,7 @@
                     "email": "mail@moritzkornher.de"
                 }
             ],
-            "time": "2015-06-07 02:06:34"
+            "time": "2015-06-07 02:10:23"
         },
         {
             "name": "frogsystem/metamorphosis",

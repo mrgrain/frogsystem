@@ -1,0 +1,28 @@
+{
+  "name": "frogsystem/frogsystem",
+  "description": "A modular content system build on the metamorphosis web application framework.",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Moritz Kornher",
+      "email": "mail@moritzkornher.de"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "vcs",
+      "url":  "https://github.com/frogsystem/fs2legacy.git"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  },
+  "require": {
+    "frogsystem/metamorphosis": "dev-master",
+    "frogsystem/fs2legacy": "dev-master"
+  }
+}

@@ -22,7 +22,7 @@
     }
   },
   "require": {
-    "frogsystem/metamorphosis": "dev-master",
-    "frogsystem/fs2legacy": "dev-master"
+    "frogsystem/metamorphosis": "dev-develop as dev-master",
+    "frogsystem/fs2legacy": "dev-develop"
   }
 }

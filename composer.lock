@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0fb9a4445b0be580f3b21b9db1e16a39",
+    "hash": "ec57cbf6ce6361e5c3009099159c332b",
     "packages": [
         {
             "name": "aura/router",
@@ -83,11 +83,11 @@
         },
         {
             "name": "frogsystem/fs2legacy",
-            "version": "dev-master",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/frogsystem/fs2legacy.git",
-                "reference": "50fc8a71166c1d6b5333b97ccad1bfcd6f18fa19"
+                "reference": "f42e9d502572bd02b4bce8e1e2061808b98efb0f"
             },
             "require": {
                 "frogsystem/metamorphosis": "dev-master"
@@ -111,20 +111,20 @@
                     "email": "mail@moritzkornher.de"
                 }
             ],
-            "time": "2015-06-14 05:11:41"
+            "time": "2015-06-14 11:20:28"
         },
         {
             "name": "frogsystem/metamorphosis",
-            "version": "dev-master",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/frogsystem/metamorphosis.git",
-                "reference": "321e4eeda37be40032e5babc210062750e0f843d"
+                "reference": "3b9cb58a7426e9c8d6748afef5ddd0d1a89d1e82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/frogsystem/metamorphosis/zipball/321e4eeda37be40032e5babc210062750e0f843d",
-                "reference": "321e4eeda37be40032e5babc210062750e0f843d",
+                "url": "https://api.github.com/repos/frogsystem/metamorphosis/zipball/3b9cb58a7426e9c8d6748afef5ddd0d1a89d1e82",
+                "reference": "3b9cb58a7426e9c8d6748afef5ddd0d1a89d1e82",
                 "shasum": ""
             },
             "require": {
@@ -162,7 +162,7 @@
             ],
             "description": "Simple web application framework, build around PSR-7 and container-interop standards.",
             "homepage": "https://github.com/frogsystem/metamorphosis",
-            "time": "2015-06-14 05:35:37"
+            "time": "2015-06-14 11:07:46"
         },
         {
             "name": "frogsystem/spawn",
@@ -443,7 +443,14 @@
         }
     ],
     "packages-dev": [],
-    "aliases": [],
+    "aliases": [
+        {
+            "alias": "dev-master",
+            "alias_normalized": "9999999-dev",
+            "version": "dev-develop",
+            "package": "frogsystem/metamorphosis"
+        }
+    ],
     "minimum-stability": "dev",
     "stability-flags": {
         "frogsystem/metamorphosis": 20,

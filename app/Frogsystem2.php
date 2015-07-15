@@ -5,6 +5,9 @@ use Frogsystem\Metamorphosis\WebApplication;
 use Frogsystem\Spawn\Contracts\KernelInterface;
 use Frogsystem\Spawn\Contracts\PluggableInterface;
 use Interop\Container\ContainerInterface;
+use League\Flysystem\Adapter\Local;
+use League\Flysystem\Filesystem;
+use League\Flysystem\Plugin\ListFiles;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
@@ -16,7 +19,7 @@ class Frogsystem2 extends WebApplication
 
         // Getting config
         $root = realpath('../');
-        @include_once(getenv('FS2CONFIG') ?: $root.'/config/main.cfg.php');
+        @include_once(getenv('FS2CONFIG') ?: $root.'/config/main.php');
         @define('FS2PUBLIC', $root.'/public');
         @define('FS2CONFIG', $root.'/config');
 
@@ -30,6 +33,10 @@ class Frogsystem2 extends WebApplication
         @define('IS_SATELLITE', false);
         @define('FS2_DEBUG', true);
         @define('FS2_ENV', 'development');
+
+        $filesystem = new Filesystem(new Local($root));
+        $filesystem->addPlugin(new ListFiles());
+        $this['League\Flysystem\Filesystem'] = $filesystem;
     }
 
     public function load(KernelInterface $kernel)

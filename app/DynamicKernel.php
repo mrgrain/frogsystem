@@ -18,6 +18,8 @@ class DynamicKernel extends WebApplicationKernel
      * @var array
      */
     protected $pluggables = [
+        //'App\Providers\DatabaseServiceProvider',
+        //'App\Providers\ConfigServiceProvider',
         'Frogsystem\Legacy\Legacy'
     ];
 }

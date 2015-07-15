@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ec57cbf6ce6361e5c3009099159c332b",
+    "hash": "11cfdfaa83ed8b4d44c6bb33fadab8e2",
     "packages": [
         {
             "name": "aura/router",
-            "version": "3.0.0-alpha2",
+            "version": "3.0.0-beta1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/auraphp/Aura.Router.git",
-                "reference": "2794b4b7499b30ad52331755b135e56d37b17ab5"
+                "reference": "bcf366a03a0231b73786f2d9329465ead04e4384"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/auraphp/Aura.Router/zipball/2794b4b7499b30ad52331755b135e56d37b17ab5",
-                "reference": "2794b4b7499b30ad52331755b135e56d37b17ab5",
+                "url": "https://api.github.com/repos/auraphp/Aura.Router/zipball/bcf366a03a0231b73786f2d9329465ead04e4384",
+                "reference": "bcf366a03a0231b73786f2d9329465ead04e4384",
                 "shasum": ""
             },
             "require": {
@@ -52,7 +52,7 @@
                 "router",
                 "routing"
             ],
-            "time": "2015-05-24 14:51:50"
+            "time": "2015-06-15 15:55:58"
         },
         {
             "name": "container-interop/container-interop",
@@ -82,24 +82,207 @@
             "time": "2014-12-30 15:22:37"
         },
         {
+            "name": "danielstjules/stringy",
+            "version": "1.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/danielstjules/Stringy.git",
+                "reference": "3cf18e9e424a6dedc38b7eb7ef580edb0929461b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/danielstjules/Stringy/zipball/3cf18e9e424a6dedc38b7eb7ef580edb0929461b",
+                "reference": "3cf18e9e424a6dedc38b7eb7ef580edb0929461b",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Stringy\\": "src/"
+                },
+                "files": [
+                    "src/Create.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel St. Jules",
+                    "email": "danielst.jules@gmail.com",
+                    "homepage": "http://www.danielstjules.com"
+                }
+            ],
+            "description": "A string manipulation library with multibyte support",
+            "homepage": "https://github.com/danielstjules/Stringy",
+            "keywords": [
+                "UTF",
+                "helpers",
+                "manipulation",
+                "methods",
+                "multibyte",
+                "string",
+                "utf-8",
+                "utility",
+                "utils"
+            ],
+            "time": "2015-02-10 06:19:18"
+        },
+        {
+            "name": "dflydev/dot-access-data",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dflydev/dflydev-dot-access-data.git",
+                "reference": "d493ca16fe1a7e82e56810124ec0b556e6ed9113"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dflydev/dflydev-dot-access-data/zipball/d493ca16fe1a7e82e56810124ec0b556e6ed9113",
+                "reference": "d493ca16fe1a7e82e56810124ec0b556e6ed9113",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Dflydev\\DotAccessData": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dragonfly Development Inc.",
+                    "email": "info@dflydev.com",
+                    "homepage": "http://dflydev.com"
+                },
+                {
+                    "name": "Beau Simensen",
+                    "email": "beau@dflydev.com",
+                    "homepage": "http://beausimensen.com"
+                }
+            ],
+            "description": "Given a deep data structure, access data by dot notation.",
+            "homepage": "https://github.com/dflydev/dflydev-dot-access-data",
+            "keywords": [
+                "access",
+                "data",
+                "dot",
+                "notation"
+            ],
+            "time": "2012-07-17 20:32:32"
+        },
+        {
+            "name": "doctrine/inflector",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/inflector.git",
+                "reference": "0bcb2e79d8571787f18b7eb036ed3d004908e604"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/inflector/zipball/0bcb2e79d8571787f18b7eb036ed3d004908e604",
+                "reference": "0bcb2e79d8571787f18b7eb036ed3d004908e604",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Doctrine\\Common\\Inflector\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Roman Borschel",
+                    "email": "roman@code-factory.org"
+                },
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de"
+                },
+                {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                },
+                {
+                    "name": "Johannes Schmitt",
+                    "email": "schmittjoh@gmail.com"
+                }
+            ],
+            "description": "Common String Manipulations with regard to casing and singular/plural rules.",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "inflection",
+                "pluralize",
+                "singularize",
+                "string"
+            ],
+            "time": "2014-12-20 21:24:13"
+        },
+        {
             "name": "frogsystem/fs2legacy",
             "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/frogsystem/fs2legacy.git",
-                "reference": "f42e9d502572bd02b4bce8e1e2061808b98efb0f"
+                "reference": "c3c821cc50e90a466b1ed6a4127f49dca0aa28e8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/frogsystem/fs2legacy/zipball/c3c821cc50e90a466b1ed6a4127f49dca0aa28e8",
+                "reference": "c3c821cc50e90a466b1ed6a4127f49dca0aa28e8",
+                "shasum": ""
             },
             "require": {
-                "frogsystem/metamorphosis": "dev-master"
+                "frogsystem/metamorphosis": "dev-develop"
             },
             "type": "library",
             "autoload": {
                 "files": [
-                    "src/frogsystem/fs2legacy/autoload/classloader.php",
-                    "src/frogsystem/fs2legacy/autoload/helpers.php"
+                    "src/autoload/classloader.php",
+                    "src/autoload/helpers.php"
                 ],
                 "psr-4": {
-                    "Frogsystem\\Legacy\\": "src/frogsystem/fs2legacy"
+                    "Frogsystem\\Legacy\\": "src"
                 }
             },
             "license": [
@@ -111,7 +294,11 @@
                     "email": "mail@moritzkornher.de"
                 }
             ],
-            "time": "2015-06-14 11:20:28"
+            "support": {
+                "source": "https://github.com/frogsystem/fs2legacy/tree/develop",
+                "issues": "https://github.com/frogsystem/fs2legacy/issues"
+            },
+            "time": "2015-07-14 10:42:50"
         },
         {
             "name": "frogsystem/metamorphosis",
@@ -119,21 +306,23 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/frogsystem/metamorphosis.git",
-                "reference": "3b9cb58a7426e9c8d6748afef5ddd0d1a89d1e82"
+                "reference": "6150e914311c01ff77dae259f77e4b993be14ffd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/frogsystem/metamorphosis/zipball/3b9cb58a7426e9c8d6748afef5ddd0d1a89d1e82",
-                "reference": "3b9cb58a7426e9c8d6748afef5ddd0d1a89d1e82",
+                "url": "https://api.github.com/repos/frogsystem/metamorphosis/zipball/6150e914311c01ff77dae259f77e4b993be14ffd",
+                "reference": "6150e914311c01ff77dae259f77e4b993be14ffd",
                 "shasum": ""
             },
             "require": {
-                "aura/router": "^3.0.0-alpha2",
+                "aura/router": "^3.0.0-beta1",
+                "dflydev/dot-access-data": "^1.0",
                 "frogsystem/spawn": "dev-master as 1.0.x-dev",
-                "league/flysystem": "^1.0.3",
+                "league/flysystem": "^1.0",
                 "php": ">=5.5.0",
                 "psr/http-message": "^1.0",
-                "zendframework/zend-diactoros": "^1.0.1"
+                "vlucas/phpdotenv": "^2.0",
+                "zendframework/zend-diactoros": "^1.1"
             },
             "require-dev": {
                 "codacy/coverage": "dev-master",
@@ -150,7 +339,7 @@
                     "Frogsystem\\Metamorphosis\\": "src/frogsystem/metamorphosis/"
                 }
             },
-            "notification-url": "http://packagist.org/downloads/",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -162,7 +351,7 @@
             ],
             "description": "Simple web application framework, build around PSR-7 and container-interop standards.",
             "homepage": "https://github.com/frogsystem/metamorphosis",
-            "time": "2015-06-14 11:07:46"
+            "time": "2015-07-14 11:27:22"
         },
         {
             "name": "frogsystem/spawn",
@@ -221,32 +410,225 @@
             "time": "2015-06-14 03:31:27"
         },
         {
-            "name": "league/flysystem",
-            "version": "1.0.4",
+            "name": "illuminate/container",
+            "version": "v5.1.6",
             "source": {
                 "type": "git",
-                "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "56862959b45131ad33e5a7727a25db19f2cf090b"
+                "url": "https://github.com/illuminate/container.git",
+                "reference": "248cd26c38d1e29eac74d32d9fff158b2232a3c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/56862959b45131ad33e5a7727a25db19f2cf090b",
-                "reference": "56862959b45131ad33e5a7727a25db19f2cf090b",
+                "url": "https://api.github.com/repos/illuminate/container/zipball/248cd26c38d1e29eac74d32d9fff158b2232a3c6",
+                "reference": "248cd26c38d1e29eac74d32d9fff158b2232a3c6",
                 "shasum": ""
             },
             "require": {
+                "illuminate/contracts": "5.1.*",
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Illuminate\\Container\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "description": "The Illuminate Container package.",
+            "homepage": "http://laravel.com",
+            "time": "2015-06-13 00:40:15"
+        },
+        {
+            "name": "illuminate/contracts",
+            "version": "v5.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/illuminate/contracts.git",
+                "reference": "6e18848e5d332d802aa8bfa60b95e022023973f1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/illuminate/contracts/zipball/6e18848e5d332d802aa8bfa60b95e022023973f1",
+                "reference": "6e18848e5d332d802aa8bfa60b95e022023973f1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Illuminate\\Contracts\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "description": "The Illuminate Contracts package.",
+            "homepage": "http://laravel.com",
+            "time": "2015-06-08 18:13:21"
+        },
+        {
+            "name": "illuminate/database",
+            "version": "v5.1.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/illuminate/database.git",
+                "reference": "0aca69fe48c1253451a5fa286082fa99814591b6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/illuminate/database/zipball/0aca69fe48c1253451a5fa286082fa99814591b6",
+                "reference": "0aca69fe48c1253451a5fa286082fa99814591b6",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/container": "5.1.*",
+                "illuminate/contracts": "5.1.*",
+                "illuminate/support": "5.1.*",
+                "nesbot/carbon": "~1.19",
+                "php": ">=5.5.9"
+            },
+            "suggest": {
+                "doctrine/dbal": "Required to rename columns and drop SQLite columns (~2.4).",
+                "fzaninotto/faker": "Required to use the eloquent factory builder (~1.4).",
+                "illuminate/console": "Required to use the database commands (5.1.*).",
+                "illuminate/events": "Required to use the observers with Eloquent (5.1.*).",
+                "illuminate/filesystem": "Required to use the migrations (5.1.*)."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Illuminate\\Database\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "description": "The Illuminate Database package.",
+            "homepage": "http://laravel.com",
+            "keywords": [
+                "database",
+                "laravel",
+                "orm",
+                "sql"
+            ],
+            "time": "2015-07-03 08:31:13"
+        },
+        {
+            "name": "illuminate/support",
+            "version": "v5.1.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/illuminate/support.git",
+                "reference": "9c6e35802e6e7c807170a0ee263d1bfcad6cbab5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/9c6e35802e6e7c807170a0ee263d1bfcad6cbab5",
+                "reference": "9c6e35802e6e7c807170a0ee263d1bfcad6cbab5",
+                "shasum": ""
+            },
+            "require": {
+                "danielstjules/stringy": "~1.8",
+                "doctrine/inflector": "~1.0",
                 "ext-mbstring": "*",
+                "illuminate/contracts": "5.1.*",
+                "php": ">=5.5.9"
+            },
+            "suggest": {
+                "jeremeamia/superclosure": "Required to be able to serialize closures (~2.0).",
+                "symfony/var-dumper": "Required to use the dd function (2.7.*)."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Illuminate\\Support\\": ""
+                },
+                "files": [
+                    "helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "description": "The Illuminate Support package.",
+            "homepage": "http://laravel.com",
+            "time": "2015-07-02 02:30:30"
+        },
+        {
+            "name": "league/flysystem",
+            "version": "1.0.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/flysystem.git",
+                "reference": "c42bed650525ec9ea1a83b715e37f4fc690f99aa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/c42bed650525ec9ea1a83b715e37f4fc690f99aa",
+                "reference": "c42bed650525ec9ea1a83b715e37f4fc690f99aa",
+                "shasum": ""
+            },
+            "require": {
                 "php": ">=5.4.0"
             },
             "require-dev": {
                 "ext-fileinfo": "*",
-                "league/phpunit-coverage-listener": "~1.1",
                 "mockery/mockery": "~0.9",
-                "phpspec/phpspec": "~2.0",
+                "phpspec/phpspec": "^2.2",
                 "phpspec/prophecy-phpunit": "~1.0",
-                "phpunit/phpunit": "~4.1",
-                "predis/predis": "~1.0",
-                "tedivm/stash": "~0.12.0"
+                "phpunit/phpunit": "~4.1"
             },
             "suggest": {
                 "ext-fileinfo": "Required for MimeType",
@@ -260,8 +642,7 @@
                 "league/flysystem-rackspace": "Allows you to use Rackspace Cloud Files",
                 "league/flysystem-sftp": "Allows you to use SFTP server storage via phpseclib",
                 "league/flysystem-webdav": "Allows you to use WebDAV storage",
-                "league/flysystem-ziparchive": "Allows you to use ZipArchive adapter",
-                "predis/predis": "Allows you to use Predis for caching"
+                "league/flysystem-ziparchive": "Allows you to use ZipArchive adapter"
             },
             "type": "library",
             "extra": {
@@ -274,7 +655,7 @@
                     "League\\Flysystem\\": "src/"
                 }
             },
-            "notification-url": "http://packagist.org/downloads/",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -284,10 +665,11 @@
                     "email": "info@frenky.net"
                 }
             ],
-            "description": "Many filesystems, one API.",
+            "description": "Filesystem abstraction: Many filesystems, one API.",
             "keywords": [
                 "Cloud Files",
                 "WebDAV",
+                "abstraction",
                 "aws",
                 "cloud",
                 "copy.com",
@@ -295,6 +677,7 @@
                 "file systems",
                 "files",
                 "filesystem",
+                "filesystems",
                 "ftp",
                 "rackspace",
                 "remote",
@@ -302,7 +685,54 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2015-06-07 21:27:37"
+            "time": "2015-07-13 09:25:28"
+        },
+        {
+            "name": "nesbot/carbon",
+            "version": "1.20.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/briannesbitt/Carbon.git",
+                "reference": "bfd3eaba109c9a2405c92174c8e17f20c2b9caf3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/bfd3eaba109c9a2405c92174c8e17f20c2b9caf3",
+                "reference": "bfd3eaba109c9a2405c92174c8e17f20c2b9caf3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "symfony/translation": "~2.6|~3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Carbon": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brian Nesbitt",
+                    "email": "brian@nesbot.com",
+                    "homepage": "http://nesbot.com"
+                }
+            ],
+            "description": "A simple API extension for DateTime.",
+            "homepage": "http://carbon.nesbot.com",
+            "keywords": [
+                "date",
+                "datetime",
+                "time"
+            ],
+            "time": "2015-06-25 04:19:39"
         },
         {
             "name": "psr/http-message",
@@ -392,17 +822,124 @@
             "time": "2012-12-21 11:40:51"
         },
         {
-            "name": "zendframework/zend-diactoros",
-            "version": "1.0.3",
+            "name": "symfony/translation",
+            "version": "v2.7.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/zendframework/zend-diactoros.git",
-                "reference": "1dce37e6df582f65d7db29cabb3310ddc50b4a50"
+                "url": "https://github.com/symfony/Translation.git",
+                "reference": "c8dc34cc936152c609cdd722af317e4239d10dd6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/1dce37e6df582f65d7db29cabb3310ddc50b4a50",
-                "reference": "1dce37e6df582f65d7db29cabb3310ddc50b4a50",
+                "url": "https://api.github.com/repos/symfony/Translation/zipball/c8dc34cc936152c609cdd722af317e4239d10dd6",
+                "reference": "c8dc34cc936152c609cdd722af317e4239d10dd6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.9"
+            },
+            "conflict": {
+                "symfony/config": "<2.7"
+            },
+            "require-dev": {
+                "psr/log": "~1.0",
+                "symfony/config": "~2.7",
+                "symfony/intl": "~2.3",
+                "symfony/phpunit-bridge": "~2.7",
+                "symfony/yaml": "~2.2"
+            },
+            "suggest": {
+                "psr/log": "To use logging capability in translator",
+                "symfony/config": "",
+                "symfony/yaml": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.7-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Translation\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Translation Component",
+            "homepage": "https://symfony.com",
+            "time": "2015-07-09 16:07:40"
+        },
+        {
+            "name": "vlucas/phpdotenv",
+            "version": "v2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vlucas/phpdotenv.git",
+                "reference": "91064290f5b53a09bdff1b939d7f69fb0e7531b5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/91064290f5b53a09bdff1b939d7f69fb0e7531b5",
+                "reference": "91064290f5b53a09bdff1b939d7f69fb0e7531b5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Dotenv\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD"
+            ],
+            "authors": [
+                {
+                    "name": "Vance Lucas",
+                    "email": "vance@vancelucas.com",
+                    "homepage": "http://www.vancelucas.com"
+                }
+            ],
+            "description": "Loads environment variables from `.env` to `getenv()`, `$_ENV` and `$_SERVER` automagically.",
+            "homepage": "http://github.com/vlucas/phpdotenv",
+            "keywords": [
+                "dotenv",
+                "env",
+                "environment"
+            ],
+            "time": "2015-05-30 16:15:01"
+        },
+        {
+            "name": "zendframework/zend-diactoros",
+            "version": "1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zendframework/zend-diactoros.git",
+                "reference": "bac9f86a4dbf282a3029602411ae655225bc370b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/bac9f86a4dbf282a3029602411ae655225bc370b",
+                "reference": "bac9f86a4dbf282a3029602411ae655225bc370b",
                 "shasum": ""
             },
             "require": {
@@ -428,7 +965,7 @@
                     "Zend\\Diactoros\\": "src/"
                 }
             },
-            "notification-url": "http://packagist.org/downloads/",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-2-Clause"
             ],
@@ -439,18 +976,11 @@
                 "psr",
                 "psr-7"
             ],
-            "time": "2015-06-04 19:49:11"
+            "time": "2015-07-12 17:59:47"
         }
     ],
     "packages-dev": [],
-    "aliases": [
-        {
-            "alias": "dev-master",
-            "alias_normalized": "9999999-dev",
-            "version": "dev-develop",
-            "package": "frogsystem/metamorphosis"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
         "frogsystem/metamorphosis": 20,

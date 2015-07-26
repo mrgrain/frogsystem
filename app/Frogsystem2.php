@@ -55,6 +55,7 @@ class Frogsystem2 extends WebApplication
 
     public function run()
     {
+        //$this->find('Frogsystem\Metamorphosis\Contracts\ConfigInterface');
         try {
             parent::run();
         } catch (\Exception $e) {

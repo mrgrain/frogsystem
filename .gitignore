@@ -10,3 +10,6 @@ server.php
 
 ### Ideas
 .idea/
+
+### Vagrant
+.vagrant/

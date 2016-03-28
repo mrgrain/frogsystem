@@ -3,16 +3,22 @@
 
 Vagrant.configure("2") do |config|
 
-    config.hostmanager.enabled = true
-    config.hostmanager.manage_host = true
-    config.hostmanager.ignore_private_ip = false
-    config.hostmanager.include_offline = true
-
     config.vm.box = "scotch/box"
+    config.vm.box_version = ">= 2.5"
+
     config.vm.network "private_network", ip: "192.168.33.10"
     # You may safely use this subdomain, as we control the domain and guarantee it won't be used otherwise
     config.vm.hostname = "dev.frogsystem.de"
     config.vm.synced_folder ".", "/var/www", :nfs => { :mount_options => ["dmode=777","fmode=766"] }
+
+
+    # hostmanager
+    if Vagrant.has_plugin?("vagrant-hostmanager")
+        config.hostmanager.enabled = true
+        config.hostmanager.manage_host = true
+        config.hostmanager.ignore_private_ip = false
+        config.hostmanager.include_offline = true
+    end
 
     config.vm.provision "shell", inline: <<-SHELL
         # Update packages

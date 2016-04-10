@@ -10,6 +10,7 @@ use League\Flysystem\Filesystem;
 use League\Flysystem\Plugin\ListFiles;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use Zend\Diactoros\Response\HtmlResponse;
 
 class Frogsystem2 extends WebApplication
 {
@@ -19,15 +20,15 @@ class Frogsystem2 extends WebApplication
 
         // Getting config
         $root = realpath('../');
-        @include_once(getenv('FS2CONFIG') ?: $root.'/config/main.php');
-        @define('FS2PUBLIC', $root.'/public');
-        @define('FS2CONFIG', $root.'/config');
+        @include_once(getenv('FS2CONFIG') ?: $root . '/config/main.php');
+        @define('FS2PUBLIC', $root . '/public');
+        @define('FS2CONFIG', $root . '/config');
 
         // Old Vars
         @define('FS2CONTENT', FS2PUBLIC);
-        @define('FS2MEDIA', FS2CONTENT.'/media');
-        @define('FS2STYLES', FS2CONTENT.'/styles');
-        @define('FS2UPLOAD', FS2CONTENT.'/upload');
+        @define('FS2MEDIA', FS2CONTENT . '/media');
+        @define('FS2STYLES', FS2CONTENT . '/styles');
+        @define('FS2UPLOAD', FS2CONTENT . '/upload');
 
         // Defaults for other constants
         @define('IS_SATELLITE', false);
@@ -53,20 +54,15 @@ class Frogsystem2 extends WebApplication
         }
     }
 
-    public function run()
+    public function handle(ServerRequestInterface $request, ResponseInterface $response, $next)
     {
-        //$this->find('Frogsystem\Metamorphosis\Contracts\ConfigInterface');
         try {
-            parent::run();
-        } catch (\Exception $e) {
-            $response = $this->terminate(
-                $this->get('Psr\Http\Message\ServerRequestInterface'),
-                $this->get('Psr\Http\Message\ResponseInterface'),
-                $e
-            );
-            echo $response->getBody();
+            return parent::handle($request, $response, $next);
+        } catch (\Exception $exception) {
+            return $next($request, $this->terminate($exception), $next);
         }
     }
+
 
     public function connect(PluggableInterface $pluggable)
     {
@@ -75,12 +71,8 @@ class Frogsystem2 extends WebApplication
         $pluggable->plugin();
     }
 
-    public function terminate(ServerRequestInterface $request, ResponseInterface $response, \Exception $error = null)
+    public function terminate(\Exception $error = null)
     {
-        if (!$error) {
-            return $response;
-        }
-
         // get trace
         $trace = $error->getTraceAsString();
 
@@ -102,8 +94,7 @@ class Frogsystem2 extends WebApplication
 HTML;
 
         // Display error
-        $response->getBody()->write($template);
-        return $response->withStatus(501);
+        return new HtmlResponse($template, 501);
     }
 
 }

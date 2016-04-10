@@ -3,12 +3,13 @@ namespace App;
 
 use App\Providers\ConfigServiceProvider;
 use App\Providers\DatabaseServiceProvider;
+use Frogsystem\Legacy\Legacy;
+use Frogsystem\Metamorphosis\Middleware\RouterMiddleware;
 use Frogsystem\Metamorphosis\WebApplication;
 use Interop\Container\ContainerInterface;
 use League\Flysystem\Adapter\Local;
 use League\Flysystem\Filesystem;
 use League\Flysystem\Plugin\ListFiles;
-use Monolog\Logger;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Log\LoggerInterface;
@@ -29,8 +30,9 @@ class Frogsystem2 extends WebApplication
         ConfigServiceProvider::class,
     ];
 
-    private $middleware = [
-//        Legacy::class
+    protected $middleware = [
+        RouterMiddleware::class,
+        Legacy::class,
     ];
 
     /**

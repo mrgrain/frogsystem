@@ -1,14 +1,21 @@
 <?php
 namespace App\Providers;
 
-use Frogsystem\Legacy\ServiceProvider;
+use App\Services\DatabaseConfig;
+use Frogsystem\Metamorphosis\Contracts\ConfigInterface;
+use Frogsystem\Metamorphosis\Providers\ServiceProvider;
+use Frogsystem\Spawn\Container;
 
 class ConfigServiceProvider extends ServiceProvider
 {
-    public function plugin()
+    /**
+     * Registers entries with the container.
+     * @param Container $app
+     */
+    public function register(Container $app)
     {
-        $this->app['Frogsystem\Metamorphosis\Contracts\ConfigInterface']
-            = $this->app->one('App\Services\DatabaseConfig', ['path' => realpath(dirname(dirname(__DIR__)).'/config/database.php')]);
-        $this->app['Frogsystem\Metamorphosis\Contracts\ConfigInterface'];
+        $app[ConfigInterface::class] = $app->one(DatabaseConfig::class, [
+            'path' => realpath(dirname(dirname(__DIR__)) . '/config/database.php')
+        ]);
     }
 }

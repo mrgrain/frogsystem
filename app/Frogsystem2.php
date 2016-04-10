@@ -1,19 +1,42 @@
 <?php
 namespace App;
 
+use App\Providers\ConfigServiceProvider;
+use App\Providers\DatabaseServiceProvider;
 use Frogsystem\Metamorphosis\WebApplication;
-use Frogsystem\Spawn\Contracts\KernelInterface;
-use Frogsystem\Spawn\Contracts\PluggableInterface;
 use Interop\Container\ContainerInterface;
 use League\Flysystem\Adapter\Local;
 use League\Flysystem\Filesystem;
 use League\Flysystem\Plugin\ListFiles;
+use Monolog\Logger;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use Psr\Log\LoggerInterface;
+use Psr\Log\NullLogger;
 use Zend\Diactoros\Response\HtmlResponse;
 
+/**
+ * Class Frogsystem2
+ * @package App
+ */
 class Frogsystem2 extends WebApplication
 {
+    /**
+     * @var array
+     */
+    private $huggables = [
+        DatabaseServiceProvider::class,
+        ConfigServiceProvider::class,
+    ];
+
+    private $middleware = [
+//        Legacy::class
+    ];
+
+    /**
+     * Frogsystem2 constructor.
+     * @param ContainerInterface|null $delegate
+     */
     public function __construct(ContainerInterface $delegate = null)
     {
         parent::__construct($delegate);
@@ -38,22 +61,21 @@ class Frogsystem2 extends WebApplication
         $filesystem = new Filesystem(new Local($root));
         $filesystem->addPlugin(new ListFiles());
         $this['League\Flysystem\Filesystem'] = $filesystem;
+
+        // Logger
+        $this[LoggerInterface::class] = $this->one(NullLogger::class);
+        
+        // load huggables
+        $this->huggables = $this->load($this->huggables);
+        $this->groupHug($this->huggables);
     }
 
-    public function load(KernelInterface $kernel)
-    {
-        try {
-            parent::load($kernel);
-        } catch (\Exception $e) {
-            $response = $this->terminate(
-                $this->get('Psr\Http\Message\ServerRequestInterface'),
-                $this->get('Psr\Http\Message\ResponseInterface'),
-                $e
-            );
-            echo $response->getBody();
-        }
-    }
-
+    /**
+     * @param ServerRequestInterface $request
+     * @param ResponseInterface $response
+     * @param Callable $next
+     * @return ResponseInterface
+     */
     public function handle(ServerRequestInterface $request, ResponseInterface $response, $next)
     {
         try {
@@ -63,14 +85,10 @@ class Frogsystem2 extends WebApplication
         }
     }
 
-
-    public function connect(PluggableInterface $pluggable)
-    {
-        // Plug the pluggable in
-        $this->pluggables[] = $pluggable;
-        $pluggable->plugin();
-    }
-
+    /**
+     * @param \Exception|null $error
+     * @return HtmlResponse
+     */
     public function terminate(\Exception $error = null)
     {
         // get trace
@@ -96,5 +114,4 @@ HTML;
         // Display error
         return new HtmlResponse($template, 501);
     }
-
 }

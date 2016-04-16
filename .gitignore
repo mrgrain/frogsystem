@@ -1,10 +1,9 @@
-### local configs
-config/main.cfg.php
-config/env.cfg.php
-config/plugins.cfg.php
+### secure data
+.env
 
 ### Composer
 composer.phar
+composer.lock
 vendor/
 
 ### PHP built-in webserver
@@ -12,3 +11,6 @@ server.php
 
 ### Ideas
 .idea/
+
+### Vagrant
+.vagrant/

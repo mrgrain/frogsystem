@@ -1,3 +1,4 @@
 <?php
 require_once('../vendor/autoload.php');
-(new App\DynamicKernel())->boot('App\Frogsystem2')->run();
+(new \Dotenv\Dotenv(dirname(__DIR__)))->load();
+(new \App\Frogsystem2())->__invoke();

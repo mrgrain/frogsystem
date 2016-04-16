@@ -13,7 +13,7 @@
   "repositories": [
     {
       "type": "vcs",
-      "url":  "https://github.com/frogsystem/fs2legacy.git"
+      "url": "https://github.com/frogsystem/fs2legacy.git"
     }
   ],
   "autoload": {
@@ -22,7 +22,9 @@
     }
   },
   "require": {
-    "frogsystem/metamorphosis": "dev-master",
-    "frogsystem/fs2legacy": "dev-master"
+    "frogsystem/metamorphosis": "dev-develop",
+    "frogsystem/fs2legacy": "dev-develop",
+    "illuminate/database": "^5.1",
+    "frogsystem/legacy-bridge": "dev-develop"
   }
 }

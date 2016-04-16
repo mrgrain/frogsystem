@@ -4,7 +4,6 @@ namespace App\Services;
 use Dflydev\DotAccessData\DataInterface;
 use Frogsystem\Metamorphosis\Services\FileConfig;
 use Illuminate\Database\ConnectionResolverInterface;
-use League\Flysystem\Filesystem;
 
 class DatabaseConfig extends FileConfig
 {

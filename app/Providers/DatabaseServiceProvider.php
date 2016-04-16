@@ -1,7 +1,6 @@
 <?php
 namespace App\Providers;
 
-use Frogsystem\Legacy\Services\Config;
 use Frogsystem\Metamorphosis\Providers\ServiceProvider;
 use Frogsystem\Metamorphosis\Services\FileConfig;
 use Frogsystem\Spawn\Container;
@@ -20,11 +19,11 @@ class DatabaseServiceProvider extends ServiceProvider
     protected $capsule;
 
     /**
-     * @param Capsule $capusle
+     * @param Capsule $capsule
      */
-    public function __construct(Capsule $capusle)
+    public function __construct(Capsule $capsule)
     {
-        $this->capsule = $capusle;
+        $this->capsule = $capsule;
     }
 
     /**

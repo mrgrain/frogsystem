@@ -5,6 +5,7 @@ use App\Providers\ConfigServiceProvider;
 use App\Providers\DatabaseServiceProvider;
 use Frogsystem\Legacy\Bridge\BridgeApplication;
 use Frogsystem\Legacy\Bridge\Providers\BridgeServices;
+use Frogsystem\Legacy\FrogsystemLegacy;
 use Frogsystem\Metamorphosis\Middleware\RouterMiddleware;
 use Frogsystem\Metamorphosis\WebApplication;
 use Interop\Container\ContainerInterface;
@@ -13,6 +14,7 @@ use League\Flysystem\Filesystem;
 use League\Flysystem\Plugin\ListFiles;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
+use Frogsystem\Legacy\Routes as LegacyRoutes;
 
 /**
  * Class Frogsystem2
@@ -27,11 +29,13 @@ class Frogsystem2 extends WebApplication
         DatabaseServiceProvider::class,
         ConfigServiceProvider::class,
         BridgeServices::class,
+        LegacyRoutes::class,
     ];
 
     protected $middleware = [
         RouterMiddleware::class,
         BridgeApplication::class,
+        FrogsystemLegacy::class,
     ];
 
     /**

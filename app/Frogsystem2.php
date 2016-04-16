@@ -5,18 +5,14 @@ use App\Providers\ConfigServiceProvider;
 use App\Providers\DatabaseServiceProvider;
 use Frogsystem\Legacy\Bridge\BridgeApplication;
 use Frogsystem\Legacy\Bridge\Providers\BridgeServices;
-use Frogsystem\Legacy\Legacy;
 use Frogsystem\Metamorphosis\Middleware\RouterMiddleware;
 use Frogsystem\Metamorphosis\WebApplication;
 use Interop\Container\ContainerInterface;
 use League\Flysystem\Adapter\Local;
 use League\Flysystem\Filesystem;
 use League\Flysystem\Plugin\ListFiles;
-use Psr\Http\Message\ResponseInterface;
-use Psr\Http\Message\ServerRequestInterface;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
-use Zend\Diactoros\Response\HtmlResponse;
 
 /**
  * Class Frogsystem2

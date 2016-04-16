@@ -3,6 +3,8 @@ namespace App;
 
 use App\Providers\ConfigServiceProvider;
 use App\Providers\DatabaseServiceProvider;
+use Frogsystem\Legacy\Bridge\BridgeApplication;
+use Frogsystem\Legacy\Bridge\Providers\BridgeServices;
 use Frogsystem\Legacy\Legacy;
 use Frogsystem\Metamorphosis\Middleware\RouterMiddleware;
 use Frogsystem\Metamorphosis\WebApplication;
@@ -28,11 +30,12 @@ class Frogsystem2 extends WebApplication
     private $huggables = [
         DatabaseServiceProvider::class,
         ConfigServiceProvider::class,
+        BridgeServices::class,
     ];
 
     protected $middleware = [
         RouterMiddleware::class,
-        Legacy::class,
+        BridgeApplication::class,
     ];
 
     /**
@@ -66,54 +69,9 @@ class Frogsystem2 extends WebApplication
 
         // Logger
         $this[LoggerInterface::class] = $this->one(NullLogger::class);
-        
+
         // load huggables
         $this->huggables = $this->load($this->huggables);
         $this->groupHug($this->huggables);
-    }
-
-    /**
-     * @param ServerRequestInterface $request
-     * @param ResponseInterface $response
-     * @param Callable $next
-     * @return ResponseInterface
-     */
-    public function handle(ServerRequestInterface $request, ResponseInterface $response, $next)
-    {
-        try {
-            return parent::handle($request, $response, $next);
-        } catch (\Exception $exception) {
-            return $next($request, $this->terminate($exception), $next);
-        }
-    }
-
-    /**
-     * @param \Exception|null $error
-     * @return HtmlResponse
-     */
-    public function terminate(\Exception $error = null)
-    {
-        // get trace
-        $trace = $error->getTraceAsString();
-
-        // Exception template
-        $template = <<<HTML
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-    <head>
-        <title>There was an error with your application</title>
-    </head>
-    <body>
-        <h1>Quak! Something went wrong...</h1>
-        <p>
-            <b>{$error->getMessage()}</b>
-        </p>
-        <pre>{$trace}</pre>
-    </body>
-</html>
-HTML;
-
-        // Display error
-        return new HtmlResponse($template, 501);
     }
 }

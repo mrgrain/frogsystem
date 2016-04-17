@@ -25,7 +25,8 @@
     "frogsystem/metamorphosis": "dev-develop",
     "frogsystem/fs2legacy": "dev-develop",
     "illuminate/database": "^5.1",
-    "frogsystem/legacy-bridge": "dev-develop"
+    "frogsystem/legacy-bridge": "dev-develop",
+    "frogsystem/legacy-polls": "dev-master"
   },
   "require-dev": {
     "phpunit/phpunit": "^5.3"

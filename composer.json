@@ -22,11 +22,11 @@
     }
   },
   "require": {
-    "frogsystem/metamorphosis": "dev-develop",
-    "frogsystem/fs2legacy": "dev-develop",
-    "illuminate/database": "^5.1",
-    "frogsystem/legacy-bridge": "dev-develop",
-    "frogsystem/legacy-polls": "dev-master"
+    "frogsystem/metamorphosis": "dev-master",
+    "frogsystem/fs2legacy": "dev-master",
+    "frogsystem/legacy-bridge": "dev-master",
+    "frogsystem/legacy-polls": "dev-master",
+    "illuminate/database": "^5.1"
   },
   "require-dev": {
     "phpunit/phpunit": "^5.3"

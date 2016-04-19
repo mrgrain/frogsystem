@@ -3,33 +3,29 @@
 
 Vagrant.configure("2") do |config|
 
+    # box settings
     config.vm.box = "scotch/box"
     config.vm.box_version = ">= 2.5"
 
+    # network
     config.vm.network "private_network", ip: "192.168.33.10"
     # You may safely use this subdomain, as we control the domain and guarantee it won't be used otherwise
     config.vm.hostname = "dev.frogsystem.de"
-    config.vm.synced_folder ".", "/var/www", :nfs => { :mount_options => ["dmode=777","fmode=766"] }
 
+    # synced directoty
+    config.vm.synced_folder ".", "/var/www", :nfs => { :mount_options => ["dmode=777","fmode=766"] }
 
     # hostmanager
     if Vagrant.has_plugin?("vagrant-hostmanager")
         config.hostmanager.enabled = true
         config.hostmanager.manage_host = true
-        config.hostmanager.ignore_private_ip = false
-        config.hostmanager.include_offline = true
     end
 
+    # provisioning
     config.vm.provision "shell", inline: <<-SHELL
-        # Update packages
-        sudo apt-get update
-        sudo apt-get upgrade -y
-
-        # install xdebug
-        sudo apt-get install php5-xdebug
-        sudo service apache2 restart
-
-        # composer to path
-        export PATH="~/.composer/vendor/bin:$PATH"
+        cd /var/www
+        cp -n .env.example .env
+        composer install --dev -n --prefer-source
+        mysql -uroot -proot scotchbox < migration/structure.sql
     SHELL
 end

@@ -6,6 +6,7 @@ use App\Providers\DatabaseServiceProvider;
 use Frogsystem\Legacy\Bridge\BridgeApplication;
 use Frogsystem\Legacy\Bridge\Providers\BridgeServices;
 use Frogsystem\Legacy\FrogsystemLegacy;
+use Frogsystem\Legacy\Polls\Services\Routes as PollsRoutes;
 use Frogsystem\Metamorphosis\Middleware\RouterMiddleware;
 use Frogsystem\Metamorphosis\WebApplication;
 use Interop\Container\ContainerInterface;
@@ -30,6 +31,7 @@ class Frogsystem2 extends WebApplication
         ConfigServiceProvider::class,
         BridgeServices::class,
         LegacyRoutes::class,
+        PollsRoutes::class,
     ];
 
     protected $middleware = [

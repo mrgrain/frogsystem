@@ -34,12 +34,6 @@ class Frogsystem2 extends WebApplication
         PollsRoutes::class,
     ];
 
-    protected $middleware = [
-        RouterMiddleware::class,
-        BridgeApplication::class,
-        FrogsystemLegacy::class,
-    ];
-
     /**
      * Frogsystem2 constructor.
      * @param ContainerInterface|null $delegate
@@ -47,6 +41,10 @@ class Frogsystem2 extends WebApplication
     public function __construct(ContainerInterface $delegate = null)
     {
         parent::__construct($delegate);
+        $this
+            ->add(BridgeApplication::class)
+            ->add(FrogsystemLegacy::class)
+        ;
 
         // Getting config
         $root = realpath('../');

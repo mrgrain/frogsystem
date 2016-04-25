@@ -42,10 +42,11 @@ class Frogsystem2 extends WebApplication
     {
         parent::__construct($delegate);
         $this
+            ->push(RouterMiddleware::class)
             ->push(BridgeApplication::class)
             ->push(FrogsystemLegacy::class)
         ;
-
+        
         // Getting config
         $root = realpath('../');
         @include_once(getenv('FS2CONFIG') ?: $root . '/config/main.php');

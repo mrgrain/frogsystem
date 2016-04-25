@@ -42,8 +42,8 @@ class Frogsystem2 extends WebApplication
     {
         parent::__construct($delegate);
         $this
-            ->add(BridgeApplication::class)
-            ->add(FrogsystemLegacy::class)
+            ->push(BridgeApplication::class)
+            ->push(FrogsystemLegacy::class)
         ;
 
         // Getting config
